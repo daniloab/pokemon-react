@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear;
+  height: 80px; */
+  width: 170px;
+  height: 56px;
+}
+
+.App-header {
+  background-color: red;
+  height: 145px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 18px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-form {
+  padding: 40px;
+}
+
+.App-form input {
+  padding: 10px 56px;
+  text-decoration: none;
+  border: none;
+  border-bottom: 2px solid red;
+  outline: none;  
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+Button {
+  margin-top: 15px;
+}
+
+.btn-busca {
+  color: red;
+  background-color: transparent !important;
+  border: 2px solid red;
+  font-weight: bold;
+}
+
+.btn-busca:hover {
+  color: white;
+  background-color: red !important;
+  border: 2px solid red;
+  font-weight: bold;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
