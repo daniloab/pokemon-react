@@ -4,3 +4,8 @@ body {
   padding-right: 300px;
   font-family: sans-serif;
 }
+
+#root {
+  border: 1px solid red;
+  padding-bottom: 10px;
+}
