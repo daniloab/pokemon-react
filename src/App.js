@@ -1,21 +1,38 @@
-import React, { Component } from 'react';
-import logo from './pokelogo2.png';
-import './App.css';
-import Button from 'react-bootstrap/lib/Button';
-import Col from 'react-bootstrap/lib/Col';
-
-// class PokemonForm extends React.Component {
-
-//   constructor(props){
-//     super(props);
-//     this.state = {value: ''};
-
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-// }
+import React, { Component } from "react";
+import logo from "./pokelogo2.png";
+import "./App.css";
+import Button from "react-bootstrap/lib/Button";
+import Col from "react-bootstrap/lib/Col";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { searchName: "", pokemon: null };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const searchName = event.target.value;
+    this.setState({ searchName });
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+    const { searchName } = this.state;
+
+    const fetchResponse = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${searchName}/`
+    );
+
+    const pokemon = await fetchResponse.json();
+
+    this.setState({ pokemon });
+
+    console.log(this.state.pokemon);
+  }
+
   render() {
     return (
       <div className="App">
@@ -24,19 +41,28 @@ class App extends Component {
           <h1 className="App-title">Find your favorite pokemon!</h1>
         </header>
         <div className="search">
-          <Col xs={12} md={12}>
-
-            <form className="App-form">
-
+          <form id="search" className="App-form" onSubmit={this.handleSubmit}>
+            <Col xs={12} md={12}>
               <Col xs={12} mdOffset={3} md={6}>
-                <input type="text" className="App-input" placeholder="Tell me it the name!" />
+                <input
+                  type="text"
+                  className="App-input"
+                  placeholder="Tell me it the name!"
+                  onChange={this.handleChange}
+                  value={this.state.searchName}
+                />
               </Col>
-
-            </form>
-          </Col>
-          <Button bsStyle="primary" className="btn-busca">Search!</Button>
+            </Col>
+            <Button
+              type="submit"
+              form="search"
+              bsStyle="primary"
+              className="btn-busca"
+            >
+              Search!
+            </Button>
+          </form>
         </div>
-
       </div>
     );
   }
