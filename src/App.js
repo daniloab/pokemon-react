@@ -27,7 +27,14 @@ class App extends Component {
           <form id="search" className="App-form" onSubmit={this.handleSubmit}>
           <Col xs={12} md={12}>
               <Col xs={12} mdOffset={3} md={6}>
-                <input type="text" className="App-input" placeholder="Tell me it the name!" />
+                <input
+                  type="text"
+                  className="App-input"
+                  placeholder="Tell me it the name!"
+                  onChange={this.handleChange}
+                  value={this.state.searchName}
+                />
+              </Col>
               </Col>
             <Button
               type="submit"
