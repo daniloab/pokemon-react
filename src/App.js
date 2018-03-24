@@ -24,19 +24,14 @@ class App extends Component {
           <h1 className="App-title">Find your favorite pokemon!</h1>
         </header>
         <div className="search">
+          <form id="search" className="App-form" onSubmit={this.handleSubmit}>
           <Col xs={12} md={12}>
-
-            <form className="App-form">
-
               <Col xs={12} mdOffset={3} md={6}>
                 <input type="text" className="App-input" placeholder="Tell me it the name!" />
               </Col>
 
             </form>
-          </Col>
-          <Button bsStyle="primary" className="btn-busca">Search!</Button>
         </div>
-
       </div>
     );
   }
