@@ -29,7 +29,14 @@ class App extends Component {
               <Col xs={12} mdOffset={3} md={6}>
                 <input type="text" className="App-input" placeholder="Tell me it the name!" />
               </Col>
-
+            <Button
+              type="submit"
+              form="search"
+              bsStyle="primary"
+              className="btn-busca"
+            >
+              Search!
+            </Button>
             </form>
         </div>
       </div>
