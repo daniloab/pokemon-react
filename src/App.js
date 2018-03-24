@@ -13,6 +13,11 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleChange(event) {
+    const searchName = event.target.value;
+    this.setState({ searchName });
+  }
+
   render() {
     return (
       <div className="App">
