@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import logo from './pokelogo2.png';
-import './App.css';
-import Button from 'react-bootstrap/lib/Button';
-import Col from 'react-bootstrap/lib/Col';
+import React, { Component } from "react";
+import logo from "./pokelogo2.png";
+import "./App.css";
+import Button from "react-bootstrap/lib/Button";
+import Col from "react-bootstrap/lib/Col";
 
 class App extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class App extends Component {
         </header>
         <div className="search">
           <form id="search" className="App-form" onSubmit={this.handleSubmit}>
-          <Col xs={12} md={12}>
+            <Col xs={12} md={12}>
               <Col xs={12} mdOffset={3} md={6}>
                 <input
                   type="text"
@@ -52,7 +52,7 @@ class App extends Component {
                   value={this.state.searchName}
                 />
               </Col>
-              </Col>
+            </Col>
             <Button
               type="submit"
               form="search"
@@ -61,7 +61,7 @@ class App extends Component {
             >
               Search!
             </Button>
-            </form>
+          </form>
         </div>
       </div>
     );
