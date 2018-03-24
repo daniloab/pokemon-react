@@ -18,6 +18,21 @@ class App extends Component {
     this.setState({ searchName });
   }
 
+  async handleSubmit(event) {
+    event.preventDefault();
+    const { searchName } = this.state;
+
+    const fetchResponse = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${searchName}/`
+    );
+
+    const pokemon = await fetchResponse.json();
+
+    this.setState({ pokemon });
+
+    console.log(this.state.pokemon);
+  }
+
   render() {
     return (
       <div className="App">
