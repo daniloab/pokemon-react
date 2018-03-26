@@ -34,9 +34,8 @@ class App extends Component {
 
             </form>
           </Col>
-          <Button bsStyle="primary" className="btn-busca">Search!</Button>
+          <Button bsStyle="primary" className="btn-busca" onClick={ativar}>Search!</Button>
         </div>
-
       </div>
     );
   }
