@@ -52,12 +52,6 @@ class App extends Component {
                   value={this.state.searchName}
                 />
               </Col>
-<<<<<<< HEAD
-
-            </form>
-          </Col>
-          <Button bsStyle="primary" className="btn-busca" onClick={ativar}>Search!</Button>
-=======
             </Col>
             <Button
               type="submit"
@@ -68,7 +62,6 @@ class App extends Component {
               Search!
             </Button>
           </form>
->>>>>>> a2d015423c89c617b0f5e81784e4f7160c24b362
         </div>
       </div>
     );
