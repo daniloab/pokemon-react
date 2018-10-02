@@ -15,7 +15,7 @@ class App extends Component {
 
   handleChange(event) {
     const searchName = event.target.value;
-    this.setState({ searchName });
+    this.setState({ searchName: "", pokemon: null });
   }
 
   async handleSubmit(event) {
@@ -33,7 +33,31 @@ class App extends Component {
     console.log(this.state.pokemon);
   }
 
+  showSection (pokemon) {
+    return (
+      <div className="app-show-pokemon">
+          <div className="poke-result">
+              <div className="poke-img">
+                  <p>{pokemon.name}</p>
+                  <img src={pokemon.sprites.front_shiny_female} />
+                  <span># number - </span><span>description</span>
+              </div>
+              <div className="poke-infos">
+                  <span>type1</span>
+                  <span>type2</span>
+                  <span>Weight: {pokemon.width}</span>
+                  <ul>
+                      <li>name</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+    )
+  }
+
   render() {
+    const { pokemon } = this.state;
+    
     return (
       <div className="App">
         <header className="App-header">
@@ -63,6 +87,7 @@ class App extends Component {
             </Button>
           </form>
         </div>
+        {pokemon && this.showSection(pokemon)}
       </div>
     );
   }
